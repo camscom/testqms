@@ -1,0 +1,1596 @@
+---
+---
+
+//
+// IMPORTShar
+//
+$Montserrat: "Montserrat", sans-serif;
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
+
+/***************/
+/* BASE RULES  */
+/***************/
+
+html {
+  font-size: 100%;
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+
+body {
+  min-width: 1200px;      // prevents layout collapse on zoom out
+  width: 100%;
+  margin: 0 auto;         // centers the whole page
+  overflow-x: hidden;     // avoids horizontal scroll from minor overflows
+  font-family: $Montserrat;
+}
+
+.page-wrapper {
+  min-width: 1200px;      // outer frame for the site
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Main container system */
+.container,
+.wrapper,
+.content {
+  max-width: 1200px;      // modern standard width
+  width: 100%;
+  margin: 0 auto;         // centers content
+  padding: 0 20px;        // breathing room on sides
+}
+
+/* Typography (unchanged from your base, kept for completeness) */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif !important;
+  color: $black;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 1em 0 15px;
+  padding: 0;
+
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: 30px;
+
+  a {
+    color: $black;
+  }
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  color: $gray;
+}
+
+p {
+  margin: 15px 0;
+  font-size: 18px;	
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $black;
+  }
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+	
+}
+
+ul {
+  list-style-type: disc;
+  line-height: 1.3;
+  font-size: 16px;	
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul,
+ul ol,
+ul ul,
+ol ol {
+  margin: 0;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+/* Clearfix */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/******************************/
+/* HEADER + NAV (MODERNIZED) */
+/******************************/
+
+/* Wrapper for the entire masthead */
+.wrapper-masthead {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Masthead container */
+.masthead {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;               /* centers header */
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+/* Header top row: avatar + logo + site info */
+.header-top {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;               /* centers row */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Avatar + logo stack */
+.header-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Avatar */
+.site-avatar {
+  height: 60px !important;
+  width: 60px !important;
+  display: none;
+
+  @include mobile {
+    margin: 0 auto;
+  }
+}
+
+/* Text logo */
+.title-img img {
+  height: 75px !important;
+  width: 300px !important;
+  margin-top: 10px !important;
+  display: block;
+}
+
+/* Site name + description */
+.site-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.site-name {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.site-description {
+  display: none; /* your original choice */
+}
+
+/********************************/
+/* DESKTOP NAVIGATION BAR       */
+/********************************/
+
+.desktop-header-nav {
+  width: 100%;
+  background: #bc960d;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;	
+  display: flex;
+  justify-content: center;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 1200px;            /* modern layout width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nav container */
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  font-size: 22px;	
+  gap: 15px;
+	
+}
+
+.nav-links a {
+  font-weight: 900;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Desktop search */
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#desktop-search-toggle,
+#desktop-search-close,
+#desktop-submit-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#desktop-search-close {
+  color: red;
+}
+
+#desktop-search-form {
+  display: none;
+  align-items: center;
+  gap: 5px;
+}
+
+#desktop-search-input {
+  padding: 3px 6px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/********************************/
+/* MOBILE NAVIGATION            */
+/********************************/
+
+@media (max-width: 768px) {
+
+  /* Hide desktop header */
+  .desktop-header-nav {
+    display: none !important;
+  }
+
+  /* Mobile header wrapper — FIXED TO TOP OF PAGE */
+  .mobile-header-nav {
+    position: fixed;        /* ⭐ Forces header to top of screen */
+    top: 15px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;          /* Stays above all content */
+    background-color: #f3efdf;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Mobile search wrapper */
+  .mobile-search {
+    position: relative;     /* ⭐ Required so icon anchors correctly */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Magnifying glass icon */
+  #mobile-search-toggle {
+    position: absolute;
+    top: 10px;              /* ⭐ Now truly top-right of the page */
+    right: 10px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  /* Search form hidden by default */
+  #mobile-search-form {
+    display: none;
+  }
+
+  /* Show search form when active */
+  #mobile-search-form.active {
+    display: block;
+  }
+
+  /* Search form container */
+  #mobile-search-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    background: #fff;
+    box-sizing: border-box;
+
+    /* ⭐ Push form down so it doesn't overlap fixed header */
+    margin-top: 60px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Close button */
+  #mobile-search-close {
+    background-color: #bc960d !important;
+    padding: 10px 14px !important;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* Search form layout */
+  #mobile-search-form-element {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+  }
+
+  /* Search input field */
+  #mobile-search-input {
+	max-width: 330px; 
+	width: 110%;  
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #bc960d;
+    border-radius: 6px;
+    box-sizing: border-box;
+	margin: 0 auto;  
+  }
+
+  /* Submit button */
+  #mobile-submit-btn {
+    padding: 10px 14px;
+    font-size: 20px;
+    background-color: #bc960d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+
+  /**********************************/
+  /* Hamburger icon                 */
+  /**********************************/	  
+  .hamburger {
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #f3efdf;
+    border-radius: 5px;
+    display: block;
+  }
+
+  /* Fullscreen mobile menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    padding-top: 60px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #f3efdf;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .mobile-menu li a {
+    font-size: 34px;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .menu-header {
+    position: relative; /* or remove entirely */
+  }
+
+
+  .hidden {
+    display: none !important;
+  }
+}
+
+/********************************/
+/* WELCOME HEADING & TEXT       */
+/********************************/
+
+.welcome-heding {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/********************************/
+/* DESKTOP ONLY RULES           */
+/********************************/
+
+@media only screen and (min-width: 820px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/************************************/
+/* HOME PAGE GRIDS — DESKTOP (1200px)
+/************************************/
+
+/* CATEGORY GRID (4 columns) */
+.CategoryContainer {
+  max-width: 1025px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  font-weight: 900;
+}
+
+/* Flexible cards */
+.TestCat,
+.TypesCat,
+.AutoCat,
+.DevOpsCat {
+  text-align: center;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 280px;     /* flexible card width */
+  margin: 0 auto;       /* centers card inside grid cell */
+}
+
+/* Category images */
+.TestCat img,
+.TypesCat img,
+.AutoCat img,
+.DevOpsCat img {
+  border-radius: 5px;
+  height: 200px;
+  width: 100%;
+  max-width: 250px;     /* preserves your preferred image size */
+  border: 2px solid #000;
+  margin: 0 auto;
+}
+
+/* Category text */
+.text1,
+.text2,
+.text3,
+.text4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+/* Attribution text */
+.TestCat p,
+.TypesCat p,
+.AutoCat p,
+.DevOpsCat p {
+  font-size: 8px;
+  color: #000;
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+/*******************************************/
+/* RECENT POSTS GRID — DESKTOP (4 columns) */
+/*******************************************/
+
+.recent-posts-heading {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recent-post-grid {
+  max-width: 1025px;
+  width: 100%;
+  margin: 2em auto 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  font-weight: 900;
+}
+
+.recent-post-card {
+  background: #f3efdf;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;     /* flexible card */
+  margin: 0 auto;
+}
+
+.recent-thumbnail img {
+  width: 100%;
+  max-width: 250px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.recent-post-title {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  margin: 0.2em 0 0;
+  text-decoration: underline;
+  color: #000;
+}
+
+/************************************/
+/* SEARCH RESULTS GRID — DESKTOP (4 columns)
+/************************************/
+
+.search-grid {
+  max-width: 1025px;
+  width: 100%;
+  margin: 1rem auto 0;
+  gap: 5px;	
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.post-card {
+  background: #f3efdf;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;	
+  width: 100%;
+  max-width: 280px;     /* flexible card */
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+.post-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-card h3 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 0.5em;
+}
+@media only screen and (max-width: 780px) {
+  .search-grid {
+  max-width: 380px;
+  width: 100%;
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}	
+ .post-card {
+  background: #f3efdf;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;	
+  width: 100%;
+  max-width: 380px;     /* flexible card */
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+	
+.post-card img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-card h3 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 0.5em;
+}	
+} /* Mobile end */
+
+/************************************/
+/* MOBILE LAYOUT (unchanged)
+/************************************/
+
+@media only screen and (max-width: 780px) {
+
+  .CategoryContainer {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    margin-left: 35px; /* your original mobile spacing */
+  }
+
+  .TestCat,
+  .TypesCat,
+  .AutoCat,
+  .DevOpsCat {
+    width: 380px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .TestCat img,
+  .TypesCat img,
+  .AutoCat img,
+  .DevOpsCat img {
+    width: 350px;
+    max-height: auto;
+	margin: 0 auto;  
+    padding: 2px;
+  }
+
+  .recent-post-grid {
+    grid-template-columns: 1fr;
+    margin-left: 35px;
+  }
+
+  .recent-post-card {
+    width: 320px;
+    margin-bottom: 30px;
+  }
+
+  .recent-thumbnail img {
+    width: 320px;
+    height: 256px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .post-card {
+    width: 320px;
+  }
+
+  .post-card img {
+    width: 320px;
+    height: 256px;
+  }
+}
+
+/******************************/
+/* FOOTER — MODERN 1200px LAYOUT */
+/******************************/
+
+/* Footer wrapper */
+.wrapper-footer {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 50px;
+}
+
+/* Footer container */
+footer {
+  width: 100%;
+  max-width: 1200px;     /* modern layout width */
+  margin: 0 auto;        /* centers footer */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Divider line above footer menu */
+.footer-top {
+  border: 5px solid #bc960d;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/******************************/
+/* FOOTER MENU */
+/******************************/
+
+.footer-menu {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;     /* ensures menu stays centered */
+  width: 100%;
+}
+
+.footer-menu nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/******************************/
+/* AMAZON AFFILIATE DISCLAIMER */
+/******************************/
+
+.amazon-attr {
+  text-align: center;
+  line-height: 24px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/******************************/
+/* MOBILE FOOTER */
+/******************************/
+
+@media only screen and (max-width: 768px) {
+
+  .footer-menu nav ul {
+    gap: 10px;
+  }
+
+  .amazon-attr {
+    margin-top: 40px;
+  }
+}
+
+/************************************/
+/* BREADCRUMBS */
+/************************************/
+
+.breadcrumbs {
+  display: inline-block;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 1.25;
+  white-space: normal;
+  padding-left: 0;
+  text-align: left;
+  color: #000;
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
+  color: #000;
+  margin-right: 4px;
+}
+
+.breadcrumbs .current,
+.breadcrumbs .current-page-title {
+  font-weight: 900;
+  color: #000;
+}
+
+@media only screen and (min-width: 820px) {
+  .breadcrumbs {
+    padding-left: 1em;
+    text-indent: -1em;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .breadcrumbs {
+    margin: 10px 10px 0 0;
+    padding-left: 0;
+    text-indent: 0;
+  }
+}
+
+/************************************/
+/* RELATED POSTS GRID */
+/************************************/
+
+.related-posts-grid {
+  max-width: 1025px;
+  width: 100%;
+  margin: 1.5em auto 0;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.related-post {
+  background: #f3efdf;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.related-post img {
+  width: 98%;
+  height: auto;
+  display: block;
+  margin: 0 auto;	
+}
+
+.related-post p {
+  padding: 0.5em;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  margin-top: -5px;	
+}
+
+.related-post a {
+  color: #000;
+}
+
+.related-posts-title {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .related-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+	gap: 5px;  
+    margin: 0 auto;
+  }
+
+  .related-post {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .related-post img {
+    width: 98%;
+    height: 110px;
+	margin: 0 auto; 
+	margin-bottom: 0px;  
+  }
+
+  .related-post p {
+	  padding: 0.5em;
+	  font-size: 14px;
+	  font-weight: 600;
+	  text-align: center;
+	  color: #000;
+	  margin-top: 0px;
+	  margin-bottom: -5px;
+	}	
+
+  .related-posts-title {
+    width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/************************************/
+/* ISTQB BANNER                     */
+/************************************/
+
+.istqb-hero {
+  display: block;
+  text-align: center;
+  padding-top: 50px;	
+}
+
+.istqb-hero p.welcome-text {
+  display: inline-block;        /* keeps each paragraph together */
+  margin: 0 0 5px 0;            /* small vertical spacing */
+  line-height: 1.4;
+}
+
+.istqb-hero a {
+  display: inline;              /* ensures links stay inline */
+  text-decoration: underline;
+  color: #000;
+  font-weight: 900;	
+}
+
+img.istqb-logo {
+ max-width: 350px;
+ border: 2px solid;
+ display: block;
+ margin: 0 auto;
+ }
+
+
+
+/************************************/
+/* SOCIAL SHARE BUTTONS */
+/************************************/
+
+.social-share {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-share svg {
+  width: 40px;
+  height: 40px;
+}
+
+.social-share a svg {
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.social-share a:hover svg {
+  transform: scale(1.1);
+}
+
+/************************************/
+/* COPYRIGHT ATTRIBUTION */
+/************************************/
+
+.copyr {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/************************************/
+/* SEARCH RESULTS PAGE */
+/************************************/
+
+#search-query-title {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 35px;
+}
+
+#search-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
+}
+
+#search-input {
+  width: 100%;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.search-button {
+  height: 35px;
+  width: 35px;
+  font-size: 18px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  #search-form {
+    max-width: 250px;
+  }
+
+  #search-input {
+    height: 30px;
+  }
+}
+
+/************************************/
+/* TYPOGRAPHY — HEADINGS + PARAGRAPHS */
+/************************************/
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: black;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 38px;
+  line-height: 1.25;
+  color: black;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 1.25;
+  color: black;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.25;
+  color: black;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.25;
+  color: black;
+  font-weight: 700;
+}
+
+/************************************/
+/* CODE BLOCKS                      */
+/************************************/
+
+.code-wrapper {
+  margin-bottom: 1.5em;	
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.code-wrapper .highlight pre {
+  min-width: max-content;
+}
+
+
+.code-wrapper .copy-btn {
+  display: block;
+  margin: 0 auto 6px auto;
+  padding: 4px 10px 6px 10px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* 🔧 Clean, scrollable code block styling for all devices */
+div.highlight {
+  background-color: #f5f5f5 !important;
+  background: #f5f5f5 !important;	
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  padding: 1em !important;
+  margin: 1em 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important; /* ✅ Remove vertical scrollbar */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+
+div.highlight pre,
+div.highlight code {
+  background-color: transparent !important;
+  margin: 0 !important;
+  margin-top: 30px;	
+  white-space: pre !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important; /* ✅ Remove vertical scrollbar */
+  font-size: 0.9em !important;
+  line-height: 1.5 !important;
+  display: block !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+/* Add padding to prevent scroll bar overlap */
+div.highlight pre,
+div.highlight code {
+  padding-bottom: 2em !important; /* ✅ Extra space below last line */
+}
+
+
+/************************************/
+/* MISC FIXES */
+/************************************/
+
+img {
+  border: 2px solid black;
+}
+
+figcaption {
+  display: block;
+  font-size: 10px;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Background Color *****************************/
+html, body {
+  background-color: #f3efdf;
+  
+}
+
+.title-img img {
+  display: none;
+}
+
+
+
+@media (min-device-width: 1200px) {
+
+  /* SITE AVATAR */
+  img.hero-logo {
+	 max-width: 450px !important;
+   height: auto !important;
+   border: none !important;
+   display: block !important;
+   margin: 0 auto !important;
+
+ }	
+  .mobile-header-nav {
+    display: none !important;
+  }
+
+  /* POST.HTML CONTAINER */	
+  .post-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Center post title on desktop */
+  .post h1 {
+    text-align: center;
+    margin: 0 auto 20px;
+    width: 100%;
+	margin-top: 40px;  
+  }
+
+  /* Center images inside blog posts on desktop */
+  .post .entry img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+	
+	
+	
+} /* end Desktop */
+
+@media (max-device-width: 780px) {
+
+   /* SITE AVATAR */
+   img.hero-logo {
+   max-width: 325px !important;
+   height: auto !important;
+   border: none !important;
+   display: block !important;
+   margin: 0 auto !important;
+   margin-top: 60px !important;
+  }	
+
+  	  
+
+  body {
+    min-width: 100% !important;
+  }
+
+  .page-wrapper {
+    min-width: 100% !important;
+  }	
+
+  .TestCat,
+  .TypesCat,
+  .AutoCat,
+  .DevOpsCat,
+  .recent-post-card,
+  .post-card {
+    width: 100% !important;
+    max-width: 320px;
+    margin: 0 auto;
+  }	
+
+
+
+/* Hamburger menu */
+/* HAMBURGER ICON — top LEFT */
+#hamburgerIcon {
+  font-size: 32px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2000;
+}
+	
+
+/* FULLSCREEN MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999; /* ensure it's above everything */
+  display: none;
+  padding: 0;
+}
+
+/* When active */
+.mobile-menu.active {
+  display: block;
+}
+
+/* CLOSE ICON */
+.mobile-menu .close-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+  z-index: 10000; /* ensure it's above menu content */
+}
+
+/* MENU LIST */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 1201px) {
+  #hamburgerIcon {
+    display: none;
+  }
+}
+
+/* Post Category Label */
+.post-label {
+	margin-top: 30px;
+}
+
+/* ISTQB Welcome Text */
+.istqb-hero p {
+  display: inline-block;        /* keeps each paragraph together */
+  margin: 0 0 5px 0;            /* small vertical spacing */
+  line-height: 1.4;
+  max-width: 380px;
+  padding: 5px;	
+}	
+
+/************************************/
+/* HOME PAGE GRIDS — DESKTOP (1200px)
+/************************************/
+
+/* CATEGORY GRID (4 columns) */
+.CategoryContainer {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(1, 1fr);
+  font-weight: 900;
+}
+
+/* Flexible cards */
+.TestCat,
+.TypesCat,
+.AutoCat,
+.DevOpsCat {
+  text-align: center;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 380px;     /* flexible card width */
+  margin: 0 auto;       /* centers card inside grid cell */
+}
+
+/* Category images */
+.TestCat img,
+.TypesCat img,
+.AutoCat img,
+.DevOpsCat img {
+  border-radius: 5px;
+  height: auto;
+  width: 100%;
+  max-width: 350px;     /* preserves your preferred image size */
+  border: 2px solid #000;
+  margin: 0 auto;
+}
+
+/* Category text */
+.text1,
+.text2,
+.text3,
+.text4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+/* Attribution text */
+.TestCat p,
+.TypesCat p,
+.AutoCat p,
+.DevOpsCat p {
+  font-size: 8px;
+  color: #000;
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+/*******************************************/
+/* RECENT POSTS GRID — DESKTOP (4 columns) */
+/*******************************************/
+
+.recent-posts-heading {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.recent-post-grid {
+  max-width: 400px;
+  width: 100%;
+  margin: 2em auto 0;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(1, 1fr);
+  font-weight: 900;
+}
+
+.recent-post-card {
+  background: #f3efdf;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;     /* flexible card */
+  margin: 0 auto;
+}
+
+.recent-thumbnail img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.recent-post-title {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  margin: 0.2em 0 0;
+  text-decoration: underline;
+  color: #000;
+}
+	
+/* MOBILE TITLE AND IMAGE SIZING FOR BLOG POSTS */
+   .post h1 {
+    text-align: center;
+    margin: 0 auto 20px;
+	margin-top: 30px;   
+    width: 100%;
+  }
+
+  .post .entry img {
+    display: block;
+    width: 100%;
+    max-width: 350px;   /* adjust if you want smaller/larger */
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+  }
+	
+  
+} /* end Mobile‑only CSS */
+
+
+/* Global table styling for all blog post tables */
+table {
+  width: 100%;
+  border-collapse: collapse;   /* ensures clean single-line borders */
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  border: 2px solid #000000;      /* light black grid lines */
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #bc960d; 
+  font-weight: 600;
+  font-size: 22px;	
+}
+
+/* Wrap tables in a scrollable container */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;       /* enables horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+}
+
+/* Optional: style the scrollbar for a cleaner look */
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background-color: #f7f7f7;
+}
+
+/* Ensure tables fit nicely inside the wrapper */
+.table-scroll table {
+  width: 100%;
+  min-width: 600px;       /* allows scroll when table exceeds viewport */
+  border-collapse: collapse;
+}
+
+
+
+
+
+
+
+  
+
+

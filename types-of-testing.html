@@ -17,25 +17,22 @@ permalink: /types-of-testing/
 <div id="related-posts-cat"></div>
 <div id="pagination" class="pagination"></div>
 
+{% assign software_posts = site.posts | where_exp: 'post', "post.categories contains 'Types' and post.categories contains 'of' and post.categories contains 'Testing'" %}
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
- {% assign software_posts = site.posts | where_exp: 'post', "post.categories contains 'Types' and post.categories contains 'of' and post.categories contains 'Testing'" %}
 
-    <script>
-    const posts = [
-      {% for post in software_posts %}
-        {
-          "title": {{ post.title | jsonify }},
-          "url": "{{ post.url | relative_url }}",
-          "image": "{{ post.image | relative_url }}"
-        }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ];
-    </script>
+  const posts = [
+    {% for post in software_posts %}
+      {
+        "title": {{ post.title | jsonify }},
+        "url": "{{ post.url | relative_url }}",
+        "image": "{{ post.image | relative_url }}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
 
-
-
-  const resultsPerPage = 8; // 🔹 Change to how many per page
+  const resultsPerPage = 8;
   let currentPage = 1;
 
   function updateURL(page) {
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         />
         <div style="color: #000; font-size: 18px; font-weight: bold;">${post.title}</div>
       </a>
-
     `).join("");
 
     renderPagination();
@@ -95,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderPage(currentPage);
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
-        }, 50); // slight delay fixes Firefox
+        }, 50);
       });
     }
     if (document.querySelector(".prev-btn")) {
@@ -107,14 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 50);
       });
     }
-
-    
   }
 
-  // Load initial page (from ?page= if available)
   const params = new URLSearchParams(window.location.search);
   currentPage = parseInt(params.get("page")) || 1;
   renderPage(currentPage);
+
 });
 </script>
 

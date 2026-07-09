@@ -535,7 +535,8 @@
           if (!query) return;
 
           hideSearchForm();
-          window.location.href = `/search-results/?q=${encodeURIComponent(query)}`;
+		  window.location.href = "{{ '/search-results/' | relative_url }}?q=" + encodeURIComponent(query);
+	
         });
 
         function hideSearchForm() {
@@ -571,7 +572,8 @@
           const query = input.value.trim();
           if (!query) return;
           hideSearchForm();
-          window.location.href = `/search-results/?q=${encodeURIComponent(query)}`;
+		  window.location.href = "{{ '/search-results/' | relative_url }}?q=" + encodeURIComponent(query);
+	
         });
 
         function hideSearchForm() {

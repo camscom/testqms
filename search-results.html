@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     queryTitle.textContent = `Search Results for: "${query}"`;
   }
 
-  fetch("testqms/search.json")
+  fetch("https://camscom.github.io/testqms/search.json")
     .then(response => response.json())
     .then(data => {
       const lowerQuery = query.toLowerCase();

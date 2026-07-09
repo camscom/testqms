@@ -20,7 +20,7 @@ permalink: /types-of-testing/
 {% assign start_index = per_page | times: page_number | minus: per_page %}
 {% assign paginated_posts = software_posts | slice: start_index, per_page %}
 
-<div class="post-grid-wrapper">
+<section class="category-grid-section">
   <div class="post-grid">
     {% for post in paginated_posts %}
       <a href="{{ post.url | relative_url }}" class="post-card">
@@ -31,7 +31,7 @@ permalink: /types-of-testing/
       </a>
     {% endfor %}
   </div>
-</div>
+</section>
 
 <div class="pagination">
   {% if page_number > 1 %}
@@ -44,26 +44,22 @@ permalink: /types-of-testing/
 </div>
 
 <style>
-  /* ✅ Break grid out of narrow wrapper */
-  .post-grid-wrapper {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    background: transparent;
+  /* ✅ Ensure parent section allows full-width grid */
+  .category-grid-section {
+    display: block;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
-  /* ✅ 2 rows × 4 columns */
+  /* ✅ 2 rows × 4 columns grid */
   .post-grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     justify-items: center;
-    max-width: 1400px;
-    margin: 0 auto 40px;
-    padding: 0 40px;
+    align-items: start;
+    margin-bottom: 40px;
   }
 
   .post-card {

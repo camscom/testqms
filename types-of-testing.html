@@ -18,7 +18,6 @@ permalink: /types-of-testing/
 {% assign page_number = page.page_number | default: 1 %}
 {% assign per_page = 8 %}
 {% assign start_index = per_page | times: page_number | minus: per_page %}
-{% assign end_index = per_page | times: page_number %}
 {% assign paginated_posts = software_posts | slice: start_index, per_page %}
 
 <div class="post-grid">
@@ -37,19 +36,21 @@ permalink: /types-of-testing/
     <a href="?page={{ page_number | minus: 1 }}" class="prev-btn">⬅ Previous</a>
   {% endif %}
   <span>Page {{ page_number }} of {{ software_posts.size | divided_by: per_page | ceil }}</span>
-  {% if end_index < software_posts.size %}
+  {% if start_index + per_page < software_posts.size %}
     <a href="?page={{ page_number | plus: 1 }}" class="next-btn">Next ➡</a>
   {% endif %}
 </div>
 
 <style>
-  /* ✅ Grid layout: 2 rows × 4 columns */
+  /* ⭐ FORCE 4 columns to fit */
   .post-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    justify-items: center;
-    max-width: 1200px;
+
+    /* ⭐ THIS IS THE FIX */
+    max-width: 1400px;
+    width: 100%;
     margin: 0 auto 40px;
   }
 
@@ -80,7 +81,6 @@ permalink: /types-of-testing/
   .pagination a {
     background-color: #d4af37;
     color: #000;
-    border: none;
     padding: 10px 20px;
     margin: 0 10px;
     font-weight: bold;

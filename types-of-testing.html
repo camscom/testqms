@@ -17,6 +17,8 @@ permalink: /types-of-testing/
 <div id="related-posts-cat"></div>
 <div id="pagination" class="pagination"></div>
 
+{{ software_posts | size }}
+
 {% assign software_posts = site.posts | where_exp: 'post', 'post.categories contains "Types"' %}
 {% assign software_posts = software_posts | where_exp: 'post', 'post.categories contains "of"' %}
 {% assign software_posts = software_posts | where_exp: 'post', 'post.categories contains "Testing"' %}

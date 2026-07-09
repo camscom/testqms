@@ -6,9 +6,6 @@ image: https://beauty-bitz.github.io/testqms/assets/images/DevOps/Azure-DevOps-T
 permalink: /azure-devops-better-test-results/
 tags: [software testing, QA, QC, Azure DevOps, automation]
 description: "A guide on software testing automation using Azure DevOps."
-redirect_from:
-  - /devops-better-test-results/
-  - /2025/05/17/devops-better-test-results/
 ---
 
 <figure>

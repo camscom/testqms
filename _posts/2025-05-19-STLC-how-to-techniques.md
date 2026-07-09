@@ -6,9 +6,6 @@ image: "/assets/images/Test/STLC.webp"
 permalink: /STLC-how-to-techniques/
 tags: [software testing, QA, QC, STLC, software testing life cycle]
 description: "A guide on the software life cycle, best techniques."
-redirect_from:
-  - /STLC/
-  - /2025/05/19/STLC/
 ---
 
 <figure>

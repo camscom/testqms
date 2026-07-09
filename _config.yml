@@ -7,7 +7,7 @@ theme: null
 # Name of your site (displayed in the header)
 #name: QMSTesting
 
-# Short bio or description (displayed in the header)
+# A short bio or description (displayed in the header)
 description: "Welcome to QMSTesting (Quality Management System Testing) — your go-to resource for software testing, test automation, and DevOps testing insights."
 
 # Site 

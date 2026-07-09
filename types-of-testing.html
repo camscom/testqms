@@ -2,12 +2,6 @@
 layout: default
 title: "Types of Testing"
 permalink: /types-of-testing/
-pagination:
-  enabled: true
-  per_page: 8
-  collection: posts
-  where:
-    - categories: "Types of Testing"
 ---
 
 <nav class="breadcrumbs">
@@ -20,8 +14,15 @@ pagination:
 <h2 class="post-title" style="font-size: 40px; line-height: 34px; text-align: center;">Showing posts for:</h2>
 <h2 class="post-label" style="margin-top: 50px; font-size: 37px; line-height: 30px; text-align: center; margin-bottom: 50px;">Types of Testing</h2>
 
+{% assign software_posts = site.posts | where_exp: 'post', 'post.categories contains "Types of Testing"' %}
+{% assign page_number = page.page_number | default: 1 %}
+{% assign per_page = 8 %}
+{% assign start_index = per_page | times: page_number | minus: per_page %}
+{% assign end_index = per_page | times: page_number %}
+{% assign paginated_posts = software_posts | slice: start_index, per_page %}
+
 <div class="post-grid">
-  {% for post in paginator.posts %}
+  {% for post in paginated_posts %}
     <a href="{{ post.url | relative_url }}" class="post-card">
       {% if post.image %}
         <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" />
@@ -32,12 +33,12 @@ pagination:
 </div>
 
 <div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="prev-btn">⬅ Previous</a>
+  {% if page_number > 1 %}
+    <a href="?page={{ page_number | minus: 1 }}" class="prev-btn">⬅ Previous</a>
   {% endif %}
-  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next-btn">Next ➡</a>
+  <span>Page {{ page_number }} of {{ software_posts.size | divided_by: per_page | ceil }}</span>
+  {% if end_index < software_posts.size %}
+    <a href="?page={{ page_number | plus: 1 }}" class="next-btn">Next ➡</a>
   {% endif %}
 </div>
 

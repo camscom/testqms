@@ -42,16 +42,22 @@ permalink: /types-of-testing/
 </div>
 
 <style>
-  /* ⭐ FORCE 4 columns to fit */
+  /* ⭐ BREAK GRID OUT OF NARROW WRAPPER */
   .post-grid {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 1400px;
+    padding: 0 40px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-
-    /* ⭐ THIS IS THE FIX */
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto 40px;
+    justify-items: center;
+    margin-bottom: 40px;
   }
 
   .post-card {
@@ -92,3 +98,4 @@ permalink: /types-of-testing/
     background-color: #b38e2e;
   }
 </style>
+

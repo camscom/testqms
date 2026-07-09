@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {% assign software_posts = site.posts | where_exp: "post", "
       post.categories contains 'Types' and
       post.categories contains 'of' and
-      post.categories contains 'Testing'
-    " %}
+      post.categories contains 'Testing'" %}
 
     
     {% for post in software_posts %}

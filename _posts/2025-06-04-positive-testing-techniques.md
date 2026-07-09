@@ -5,7 +5,7 @@ categories:
   - "Types of Testing"
 image: "/assets/images/Types/positive-testing.webp"
 tags: [software testing, QA, QC, Types of Testing, Positive Testing]
-description: "A guide on positive testing techniques in the software testing life cycle (STLC)."
+description: "A guide to the positive testing techniques in the software testing life cycle (STLC)."
 ---
 
 <figure>

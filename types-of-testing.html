@@ -35,9 +35,9 @@ permalink: /types-of-testing/
 </div>
 
 <style>
-  #related-posts-cat {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+ #related-posts-cat {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
@@ -45,20 +45,22 @@ permalink: /types-of-testing/
 
 .category-card {
     display: block;
+    width: 100%;
     text-decoration: none;
-    text-align: center;
 }
 
 .category-card img {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 .category-title {
-    margin-top: 12px;
-    color: #000;
+    text-align: center;
     font-size: 18px;
     font-weight: bold;
+    margin-top: 10px;
+    color: #000;
 }
-</style>
+</style>  

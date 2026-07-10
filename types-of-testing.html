@@ -16,51 +16,28 @@ permalink: /types-of-testing/
 
 {% assign software_posts = site.posts | where_exp: 'post', 'post.categories contains "Types of Testing"' %}
 
-<div id="related-posts-cat">
+<div class="recent-post-grid">
   {% for post in software_posts %}
-    <a href="{{ post.url | relative_url }}" class="category-card">
-      {% if post.image %}
-        <img
-          class="related-img"
-          src="{{ post.image | relative_url }}"
-          alt="{{ post.title }}"
-          loading="lazy"
-        />
-      {% endif %}
-      <div class="category-title">
-        {{ post.title }}
-      </div>
-    </a>
+    <div class="recent-post-card">
+      <a href="{{ post.url | relative_url }}">
+        {% if post.image %}
+          <div class="recent-thumbnail">
+            <img
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.title }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+        <h3 class="recent-post-title">
+          {{ post.title }}
+        </h3>
+      </a>
+    </div>
   {% endfor %}
 </div>
 
-<style>
- #related-posts-cat {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.category-card {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-}
 
-.category-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.category-title {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #000;
-}
-</style>  
+ 

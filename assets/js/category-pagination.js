@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const postsPerPage = 6;
+    const postsPerPage = 8;
 
     const posts = document.querySelectorAll(".recent-post-card");
 

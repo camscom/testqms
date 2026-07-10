@@ -37,34 +37,28 @@ permalink: /types-of-testing/
 <style>
   #related-posts-cat {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-  /* Each card: 4 per row */
-  .category-card {
+.category-card {
+    display: block;
     text-decoration: none;
     text-align: center;
+}
 
-    box-sizing: border-box;
-     width: 275px;
+.category-card img {
+    width: 100%;
     height: auto;
-  }
+    border-radius: 6px;
+}
 
-  .category-card img {
-      width: 250px;
-  height: auto;
-  border-radius: 5px;
-  object-fit: cover;
-
-  }
-
-  .category-title {
+.category-title {
+    margin-top: 12px;
     color: #000;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 10px;
-  }
+}
 </style>

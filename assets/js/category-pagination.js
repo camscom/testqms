@@ -1,5 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (!urlParams.has("page")) {
+        history.replaceState(
+            null,
+            "",
+            window.location.pathname + "?page=1"
+        );
+    }
+
+    // Your existing pagination code goes here
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
     const postsPerPage = 6;
 
     const posts = document.querySelectorAll(".recent-post-card");
